@@ -1,8 +1,8 @@
 baseURL = 'https://victor99z.github.io/'
 languageCode = 'en-us'
 title = 'Victor Bernardes'
-theme = 'contrast-hugo'
-#theme = "PaperMod"
+#theme = 'contrast-hugo'
+theme = "PaperMod"
 math= true
 buildDrafts = true
 
