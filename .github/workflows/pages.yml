@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.99.0  # Consider updating to a newer Hugo version if available
+      HUGO_VERSION: 0.112.7  # Updated to current stable version
     steps:
       - name: Install Hugo CLI
         run: |
@@ -33,11 +33,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          fetch-depth: 0  # Recommended for Hugo to get full history
+          fetch-depth: 0
           
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3  # Updated to latest version
+        uses: actions/configure-pages@v3
         
       - name: Build with Hugo
         run: |
@@ -45,8 +45,8 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"
             
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2  # Updated to latest version
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
@@ -59,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2  # Updated to latest version
+        uses: actions/deploy-pages@v2
